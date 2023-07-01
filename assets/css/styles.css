@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+/* base */
+
+:root {
+  --header-height: 4rem;
+
+  /* fonts */
+
+  /* size */
+  --body-font: 'Manrope', sans-serif;
+  --section-font-size: 4em;
+  --title-font-size: 4em;
+  --desc-font-size: 1.2em;
+  --normal-font-size: 1em;
+  --logo-font-size: 1.5em;
+
+  /* font weight */
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 700;
+
+  /* color */
+  --body-color: #F5F5F5;;
+  --logo-color: rgba(54, 65, 76, 1);
+  --header-color: rgba(255, 255, 255, 1);
+  --title-color: rgba(255, 255, 255, 1);
+  --home-card: linear-gradient(302.14deg, #FF005C -56.3%, #FF5B83 69.29%);
+  --second-color: rgba(255, 172, 255, 1);
+  --desc-color: rgba(143, 156, 169, 1);
+  --btn-bg-active: rgba(255, 189, 90, 1);
+  --btn-bg: rgba(56, 201, 118, 1);
+  --btn-bg-default: rgba(255, 255, 255, 1);
+  --footer-desc: rgba(213, 221, 229, 1);
+}
+
+@media screen and (max-width: 1400px) {
+  :root {
+    /* size mobile */
+    --section-font-size: 2.5em;
+    --title-font-size: 2em;
+    --desc-font-size: 1em;
+    --normal-font-size: 1em;
+    --logo-font-size: 1.5em;
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: var(--desc-color);
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button, input {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+h1 {
+  color: var(--title-color);
+  font-size: var(--title-font-size);
+  font-family: var(--font-semi-bold);
+}
+
+p {
+  color: var(--desc-color);
+  font-size: var(--desc-font-size);
+}
+
+button, body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--title-color);
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background: rgba(255, 255, 255, 0.0);
+}
+
+body {
+  background-color: var(--body-color);
+}
+
+/* base */
+
+.container {
+  max-width: 1700px;
+  margin-inline: 1.5rem;
+}
+
+.section {
+  margin-top: 11rem;
+}
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* header */
+
+.header {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  right: 0;
+
+  padding: 1rem;
+  z-index: 1;
+
+  border-radius: 24px;
+  background-color: var(--header-color);
+
+  transition: all .3s;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: var(--header-height);
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+
+  font-size: var(--logo-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--logo-color);
+
+  transition: all .3s;
+}
+
+.nav__logo svg {
+  width: 40px;
+  height: 40px;
+
+  transition: all .3s;
+}
+
+.nav__toggle,
+.nav__close {
+  display: flex;
+  cursor: pointer;
+
+  width: 20px;
+  height: 20px;
+
+  transition: all .3s;
+}
+
+.nav__toggle:hover,
+.nav__close:hover {
+  transform: translateY(-5px);
+}
+
+/* media */
+@media screen and (max-width: 1400px) {
+  .nav__menu, .nav__payment {
+    position: fixed;
+    left: 0;
+    top: -100%;
+    
+    width: 100%;
+    padding-block: 4rem;
+
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0);
+    background-color: var(--body-color);
+
+    transition: all .3s;
+
+    z-index: 1;
+  }
+}
+
+.nav__list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+
+  text-align: center;
+}
+
+.nav__link {
+  display: inline-flex;
+  vertical-align: top;
+  padding: 1.5rem 1rem;
+  position: relative;
+
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  color: var(--desc-color);
+
+  transition: all .3s;
+}
+
+.nav__link:hover {
+  color: var(--desc-color)
+}
+
+.active {
+  padding: 1.5rem 1rem;
+  border-radius: 24px;
+  background-color: var(--btn-bg-active);
+  color: var(--title-color);
+}
+
+.nav__close {
+  position: absolute;
+  top: 2rem;
+  right: 1.5rem;
+}
+
+.snow-menu {
+  top: 0;
+}
+
+/* home */
+.home__banner {
+  border-radius: 23px;
+  background: var(--home-card);
+}
+
+.home__banner-data {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  padding: 2rem;
+}
+
+.home__desc {
+  color: var(--second-color);
+  font-size: 1.5em;
+
+  margin-bottom: 2rem;
+}
+
+.home__link {
+  border-radius: 24px;
+  padding: 1.5rem 3rem 1rem;
+  background-color: var(--header-color);
+}
+
+.home__form {
+  display: flex;
+  row-gap: 1rem;
+  flex-direction: column;
+}
+
+.home__input {
+  background-color: var(--header-color);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 24px;
+}
+
+.home__btn {
+  padding: 2rem;
+  border-radius: 24px;
+  background-color: var(--btn-bg);
+}
+
+.home__form-label {
+  color: var(--desc-color);
+}
+
+.home__form-input {
+  color: var(--btn-bg);
+}
+
+/* products */
+.products {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.products__card {
+  text-align: center;
+
+  padding: 2rem;
+  border-radius: 24px;
+  background-color: var(--header-color);
+}
+
+.products__title {
+  color: var(--desc-color);
+}
+
+.products__desc {
+  color: var(--btn-bg);
+
+  text-transform: uppercase;
+}
+
+.products__status {
+  font-size: 1em;
+
+  padding: 1rem;
+  border-radius: 24px;
+  width: 80px;
+  background-color: var(--btn-bg);
+}
+
+/* footer */
+
+.footer__container, .footer__list, .footer__social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.footer__logo {
+  font-size: 1em;
+  font-weight: var(--font-medium);
+  color: var(--desc-color);
+}
+
+.footer__list, .footer__social {
+  gap: 2rem;
+}
+
+/* media */
+@media screen and (min-width: 1400px) {
+  .container {
+    margin: 0 auto;
+  }
+  
+  .nav__list {
+    gap: 2rem;
+    flex-direction: row;
+  }
+
+  .nav__toggle, .nav__close {
+    display: none;
+  }
+
+  /* home */
+  .home__container {
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+  }
+
+  .home__banner-container {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  /* products */
+  .products__container {
+    grid-template-columns: repeat(4, auto);
+  }
+
+  .footer__container, .footer__list, .footer__social {
+    flex-direction: row;
+  }
+}

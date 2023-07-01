@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=2, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/styles.css">
+  <title>Outreach - онлайн магазин</title>
+</head>
+<body>
+
+  <!-- header -->
+  <header class="header container">
+    <nav class="nav container">      
+      <a href="#" class="nav__logo">
+        <img src="./assets/img/logo.svg" />
+      </a>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">          
+          <li class="nav__item">
+            <a class="nav__link active" href="#">Играть</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Правила</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">Помощь</a>
+          </li>
+        </ul>
+        
+        <div class="nav__close" id="nav-close">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.0007 10.5865L16.9504 5.63672L18.3646 7.05093L13.4149 12.0007L18.3646 16.9504L16.9504 18.3646L12.0007 13.4149L7.05093 18.3646L5.63672 16.9504L10.5865 12.0007L5.63672 7.05093L7.05093 5.63672L12.0007 10.5865Z"></path></svg>
+        </div>        
+      </div>
+
+      <div class="nav__payment">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#">
+              <img src="./assets/img/discord.svg">
+            </a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#">
+              <img src="./assets/img/vk.svg">
+            </a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link active" href="#">Пополнить баланс</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="nav__toggle" id="nav-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 4H21V6H3V4ZM9 11H21V13H9V11ZM3 18H21V20H3V18Z"></path></svg>
+      </div>
+      
+    </nav>
+
+  </header>
+
+  <!-- home -->
+  <section class="home section">
+    <div class="home__container container grid">
+      <div class="home__banner home__banner-container grid">
+        <div class="home__banner-data">
+          <h1 class="home__title">
+            Акция X2 уже <br>
+            на сервере
+          </h1>
+          <p class="home__desc">
+            Мы наконец-то открылись, а вам <br>
+            бонус X2 к пополнению!
+          </p>
+
+          <div>
+            <a class="home__link" href="#">
+              <img src="./assets/img/arrow.svg" />
+            </a>
+          </div>
+
+        </div>
+
+        <img class="home__img" src="./assets/img/home__wallet.svg" />
+      </div>
+      <div class="home__data">
+        <form class="home__form">
+          <input class="home__input" placeholder="Введите свой SteamId" />
+          <input class="home__input" placeholder="Введите сумму" />
+
+          <div class="home__form-radio-input">
+            <input class="home__form-input" type="radio" id="contactChoice3" name="contact" value="mail">
+            <label class="home__form-label" for="contactChoice3">
+              Я согласен с условиями пользовательского соглашения
+            </label>
+          </div>
+          <button class="home__btn">
+            Далее
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- products -->
+  <section class="products">
+    <div class="products__container container grid">
+      <article class="products__card">
+        <h1 class="products__status">
+          Бонус
+        </h1>
+
+        <img class="products__img" src="./assets/img/money.svg" />
+
+        <h1 class="products__title">
+          150 RUB
+        </h1>
+        <p class="products__desc">
+          бонус +150 RUB
+        </p>
+      </article>
+      <article class="products__card">
+        <h1 class="products__status">
+          Бонус
+        </h1>
+
+        <img class="products__img" src="./assets/img/money.svg" />
+
+        <h1 class="products__title">
+          150 RUB
+        </h1>
+        <p class="products__desc">
+          бонус +150 RUB
+        </p>
+      </article>
+      <article class="products__card">
+        <h1 class="products__status">
+          Бонус
+        </h1>
+
+        <img class="products__img" src="./assets/img/money.svg" />
+
+        <h1 class="products__title">
+          150 RUB
+        </h1>
+        <p class="products__desc">
+          бонус +150 RUB
+        </p>
+      </article>
+      <article class="products__card">
+        <h1 class="products__status">
+          Бонус
+        </h1>
+
+        <img class="products__img" src="./assets/img/money.svg" />
+
+        <h1 class="products__title">
+          150 RUB
+        </h1>
+        <p class="products__desc">
+          бонус +150 RUB
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer__container container grid">
+
+      <h1 class="footer__logo">
+        © 2023 OUTREACH
+      </h1>
+      <nav class="footer__nav container">
+        <ul class="footer__list">
+          <li class="footer__item">
+            <a class="footer__link" href="#">Пользовательское соглашение</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">Поддержка</a>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link" href="#">help@outreach-rp.ru</a>
+          </li>
+        </ul>
+      </nav>
+      
+      <div class="footer__social">
+        <img class="footer__img" src="./assets/img/discord.svg" />
+        <img class="footer__img" src="./assets/img/vk.svg" />
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- script -->
+  <script src="./assets/js/main.js"></script>
+</body>
+</html>
