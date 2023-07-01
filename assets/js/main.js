@@ -15,15 +15,12 @@ if (navClose) {
   })
 }
 
-// activeLinks
+// active links
+const navLinks = document.querySelectorAll('.nav__link');
 
-const menuLinks = document.querySelectorAll('nav a');
-
-menuLinks.forEach(link => {
-  link.addEventListener('click', function() {
-    menuLinks.forEach(link => link.classList.remove('active'));
-    this.classList.add('active');
-  });
-});
+navLinks.forEach(n => n.addEventListener('click', () => {
+  navLinks.forEach(n => n.classList.remove('active'))
+  n.classList.add('active');
+}))
 
 // payment
