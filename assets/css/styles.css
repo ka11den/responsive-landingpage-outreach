@@ -120,7 +120,7 @@ body {
 /* header */
 
 .header {
-  position: fixed;
+  position: absolute;
   top: 30px;
   left: 0;
   right: 0;
@@ -269,6 +269,11 @@ body {
   padding: 2rem;
 }
 
+.home__title {
+  font-size: 2.5em;
+  font-weight: 800;
+}
+
 .home__desc {
   color: var(--second-color);
   font-size: 1.5em;
@@ -289,10 +294,20 @@ body {
 }
 
 .home__input {
-  background-color: var(--header-color);
   padding: 2rem;
-  text-align: center;
+  text-align: center;  
+
+  font-size: 1.2em;
+  color: var(--desc-color);
+
+  background-color: var(--header-color);
   border-radius: 24px;
+}
+
+.home__input::placeholder {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--desc-color);
 }
 
 .home__btn {
@@ -307,6 +322,71 @@ body {
 
 .home__form-input {
   color: var(--btn-bg);
+}
+
+.color-red, .color-green {
+  font-size: 1em;
+  font-weight: 700;
+  color: #FF005C;
+}
+
+.color-green {
+  color: var(--btn-bg);
+}
+
+.home__label {
+  font-size: 1em;
+  font-weight: 600;
+  color: var(--desc-color);
+}
+
+.home__box { 
+  display: flex;
+  align-items: center;
+
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+input[type='radio'],
+label {
+  cursor: pointer;
+}
+
+input[type='radio'] {
+  position: relative;
+  height: 22px;
+  width: 22px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+}
+
+input[type='radio']::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border: 2px solid #ffffff;
+}
+
+input[type='radio']:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--btn-bg);
+  transform: translate(-50%, -50%);
+  visibility: visible;
 }
 
 /* products */
@@ -366,6 +446,27 @@ body {
 }
 
 /* media */
+@media screen and (min-width: 500px) {
+  .products__container  {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .home__title {
+    font-size: 4em;
+  }
+
+  .home__banner-container {
+    grid-template-columns: repeat(2, auto);
+    align-items: flex-end;
+  }
+
+  .products__container  {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
 @media screen and (min-width: 1400px) {
   .container {
     margin: 0 auto;
@@ -384,10 +485,6 @@ body {
   .home__container {
     grid-template-columns: repeat(2, auto);
     align-items: center;
-  }
-
-  .home__banner-container {
-    grid-template-columns: repeat(2, auto);
   }
 
   /* products */

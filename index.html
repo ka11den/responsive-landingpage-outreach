@@ -83,17 +83,20 @@
         <img class="home__img" src="./assets/img/home__wallet.svg" />
       </div>
       <div class="home__data">
-        <form class="home__form">
-          <input class="home__input" placeholder="Введите свой SteamId" />
-          <input class="home__input" placeholder="Введите сумму" />
+        <form action="" class="home__form" id="home-form">
+          <input class="home__input" id="home-input-steamid" placeholder="Введите свой SteamId" />
+          <input class="home__input" id="home-input-sum" placeholder="Введите сумму" />
 
-          <div class="home__form-radio-input">
-            <input class="home__form-input" type="radio" id="contactChoice3" name="contact" value="mail">
-            <label class="home__form-label" for="contactChoice3">
-              Я согласен с условиями пользовательского соглашения
+          <div class="home__box">
+            <input class="home__radio" type="radio" id="contactChoice3" name="contact" value="mail">
+            <label class="home__label" for="contactChoice3">
+              Я согласен с условиями <a href="#" style="color:var(--btn-bg)">пользовательского соглашения</a>
             </label>
           </div>
-          <button class="home__btn">
+
+          <p class="home__message" id="home-message"></p>
+
+          <button type="submit" class="home__btn">
             Далее
           </button>
         </form>
