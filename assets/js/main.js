@@ -144,6 +144,73 @@ homeForm.addEventListener('submit', paymentForm)
 
 // products effect hover and click payment
 
+const data = [
+  {
+    id: 1,
+    cat: 'Пополнение',
+    status: "Бонус",
+    img: './assets/img/money.svg',
+    title: '300 P',
+    price: "ЗА 150 ₽"
+  },
+  {
+    id: 2,
+    cat: 'Пополнение',
+    status: "Бонус",
+    img: './assets/img/money2.svg',
+    title: '500 P',
+    price: "ЗА 250 ₽"
+  },
+  {
+    id: 3,
+    cat: 'Пополнение',
+    status: "Популярно",
+    img: './assets/img/money3.svg',
+    title: '1000 P',
+    price: "ЗА 500 ₽"
+  },
+  {
+    id: 4,
+    cat: 'Пополнение',
+    status: "Популярно",
+    img: './assets/img/money4.svg',
+    title: '2000 Р',
+    price: "ЗА 1000 ₽"
+  },
+  {
+    id: 5,
+    cat: 'Привелегии',
+    status: "Популярно",
+    img: './assets/img/product.svg',
+    title: 'VIP',
+    price: "ЗА 199 ₽"
+  },
+  {
+    id: 6,
+    cat: 'Привелегии',
+    status: "Популярно",
+    img: './assets/img/product2.svg',
+    title: 'MODER',
+    price: "ЗА 449 ₽"
+  },
+  {
+    id: 7,
+    cat: 'Привелегии',
+    status: "Популярно",
+    img: './assets/img/product3.svg',
+    title: 'ADMIN',
+    price: "ЗА 849 ₽"
+  },
+  {
+    id: 8,
+    cat: 'Привелегии',
+    status: "Популярно",
+    img: './assets/img/product4.svg',
+    title: 'SADMIN',
+    price: "ЗА 2049 ₽"
+  },
+]
+
 function showImage(id) {
   const buyImage = document.getElementById("buy" + id);
   const productImage = document.getElementById("productImg" + id);
@@ -214,6 +281,70 @@ function showImage(id) {
           body: JSON.stringify(paymentFoo)
         }).then(window.location.href = `${link_page_url}`);
       break;
+      case 5:
+        const paymentFive = {
+          order_id: Math.round(Math.random() * 10000),
+          amount: 199,
+          currency_in: "RUB",
+          shop_id: "shopId",
+        }
+      
+        await fetch("https://cardlink.link/api/v1/bill/create", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(paymentFive)
+        }).then(window.location.href = `${link_page_url}`);
+      break;
+      case 6:
+        const paymentSex = {
+          order_id: Math.round(Math.random() * 10000),
+          amount: 449,
+          currency_in: "RUB",
+          shop_id: "shopId",
+        }
+      
+        await fetch("https://cardlink.link/api/v1/bill/create", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(paymentSex)
+        }).then(window.location.href = `${link_page_url}`);
+      break;
+      case 7:
+        const paymentSeven = {
+          order_id: Math.round(Math.random() * 10000),
+          amount: 849,
+          currency_in: "RUB",
+          shop_id: "shopId",
+        }
+      
+        await fetch("https://cardlink.link/api/v1/bill/create", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(paymentSeven)
+        }).then(window.location.href = `${link_page_url}`);
+      break;
+      case 8:
+        const paymentEight = {
+          order_id: Math.round(Math.random() * 10000),
+          amount: 2049,
+          currency_in: "RUB",
+          shop_id: "shopId",
+        }
+      
+        await fetch("https://cardlink.link/api/v1/bill/create", {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(paymentEight)
+        }).then(window.location.href = `${link_page_url}`);
+      break;
       default:
         break;
     }
@@ -231,3 +362,61 @@ function hideImage(id) {
   productImage.style.filter = "opacity(1)";
   buyImage.style.display = "none";
 }
+const productsContainer = document.getElementById('productsContainer')
+
+function displayProducts (products) {
+  productsContainer.innerHTML = products
+  .map(
+    (product) => 
+    `
+      <article class="products__card" id="productsСard" onmouseover="showImage(${product.id})" onmouseout="hideImage(${product.id})">
+        <img class="products__buy-img" id="buy${product.id}" src="./assets/img/buy.svg" />
+        <div class="products__statuses">
+        ${product.status === "Популярно" ? `<h1 class="products__status-popular">Популярно</h1>` : `<h1 class="products__status">Бонус</h1>`}
+        </div>
+        <img class="products__img" id="productImg${product.id}" src=${product.img} />
+
+        <h1 class="products__title">
+          ${product.title}
+        </h1>
+        <p class="products__desc">
+          ${product.price}
+        </p>
+      </article>
+    `
+  )
+  .join("");
+}
+
+const categoriesContainer = document.querySelector(".products__cat");
+
+function setCategories () {
+  const allCats = data.map((item) => item.cat);
+  const categories = [
+    "Все",
+    ...allCats.filter((item, i) => {
+      return allCats.indexOf(item) === i;
+    }),
+  ];
+
+  categoriesContainer.innerHTML = categories
+    .map(
+      (cat) =>
+        `
+          <p class="prudcts__link-cat">${cat}</p>
+        `
+    )
+    .join("");
+
+  categoriesContainer.addEventListener("click", (e) => {
+    const selectedCat = e.target.textContent;
+
+    selectedCat === "Все"
+      ? displayProducts(data)
+      : displayProducts(data.filter((item) => item.cat === selectedCat));
+  });
+};
+
+
+displayProducts(data);
+setCategories();
