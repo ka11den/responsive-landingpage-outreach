@@ -21,7 +21,7 @@
             <a class="nav__link" href="steam://connect/194.147.90.76:27015">Играть</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Правила</a>
+            <a class="nav__link" href="https://discord.com/invite/hudxffsWXU">Правила</a>
           </li>
           <li class="nav__item">
             <a class="nav__link" href="https://vk.me/onyxgmod">Поддержка</a>
@@ -88,7 +88,7 @@
 
           <div class="home__box">
             <input class="home__radio" type="checkbox" id="checkbox" name="checkbox" placeholder="checkbox">
-            <label class="home__label" for="contactChoice3">
+            <label class="home__label" for="checkbox">
               Я согласен с условиями <a href="https://docs.google.com/document/d/1iCIerpuqkPvM5rJJh8x8jQF4Mc-W6aIPmW4PjQS_Gp4/edit?usp=sharing" style="color:var(--btn-bg)">пользовательского соглашения</a>
             </label>
           </div>          
@@ -159,9 +159,14 @@
       </article>
       <article class="products__card" id="productsСard" onmouseover="showImage(4)" onmouseout="hideImage(4)">
         <img class="products__buy-img" id="buy4" src="./assets/img/buy.svg" />
-        <h1 class="products__status">
-          Бонус
-        </h1>
+        <div class="products__statuses">
+          <h1 class="products__status">
+            Бонус
+          </h1>
+          <h1 class="products__status-popular">
+            Популярно
+          </h1>
+        </div>
 
         <img class="products__img" id="productImg4" src="./assets/img/money.svg" />
 
@@ -184,7 +189,7 @@
       <nav class="footer__nav container">
         <ul class="footer__list">
           <li class="footer__item">
-            <a class="footer__link" href="#">Пользовательское соглашение</a>
+            <a class="footer__link" href="https://docs.google.com/document/d/1iCIerpuqkPvM5rJJh8x8jQF4Mc-W6aIPmW4PjQS_Gp4/edit?pli=1">Пользовательское соглашение</a>
           </li>
           <li class="footer__item">
             <a class="footer__link" href="https://vk.me/onyxgmod">Поддержка</a>
@@ -196,11 +201,11 @@
       </nav>
       
       <div class="footer__social">
-        <a href="https://discord.com/invite/hudxffsWXU">
-        <img class="footer__img" src="./assets/img/discord.svg" />
+        <a class="footer__link" href="https://discord.com/invite/hudxffsWXU">
+          <img class="footer__img" src="./assets/img/discord.svg" />
         </a>
-        <a href="https://vk.com/onyxgmod">
-        <img class="footer__img" src="./assets/img/vk.svg" />
+        <a class="footer__link" href="https://vk.com/onyxgmod">
+          <img class="footer__img" src="./assets/img/vk.svg" />
         </a>
       </div>
 
