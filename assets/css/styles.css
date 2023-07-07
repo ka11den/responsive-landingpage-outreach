@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.cdnfonts.com/css/gotham-6');
 
 /* base */
 
@@ -15,6 +16,13 @@
   --normal-font-size: 1em;
   --logo-font-size: 1.5em;
 
+    --second1-font: 'Gotham', sans-serif;
+  --section1-font-size: 4em;
+  --title1-font-size: 4em;
+  --desc1-font-size: 1.2em;
+  --normal1-font-size: 1em;
+  --logo1-font-size: 1.5em;
+
   /* font weight */
   --font-regular: 400;
   --font-medium: 500;
@@ -26,7 +34,11 @@
   --header-color: rgba(255, 255, 255, 1);
   --title-color: rgba(255, 255, 255, 1);
   --home-card: linear-gradient(302.14deg, #FF005C -56.3%, #FF5B83 69.29%);
-  --second-color: rgba(255, 172, 255, 1);
+  --fail-color: #FF6262;
+  --wait-color: #FFBD5A;
+  --back-color: #36414C;
+  --second-color: #FFB8FF;
+  --haha-color: #FFB8FF;
   --desc-color: rgba(143, 156, 169, 1);
   --btn-bg-active: rgba(255, 189, 90, 1);
   --btn-bg: rgba(56, 201, 118, 1);
@@ -235,7 +247,10 @@ body {
 }
 
 .nav__link:hover {
-  color: var(--desc-color)
+  color: var(--wait-color)
+}
+.nav__link:active {
+  color: var(--wait-color)
 }
 
 .active {
@@ -243,12 +258,20 @@ body {
   border-radius: 24px;
   background-color: var(--btn-bg-active);
   color: var(--title-color);
+
+  transition: all .3s;
+}
+
+.active-img {
+  filter: hue-rotate(539deg) contrast(3);
+
+  transition: all .3s;
 }
 
 .nav__close {
   position: absolute;
-  top: 2rem;
-  right: 1.5rem;
+  top: 4.5rem;
+  right: 4rem;
 }
 
 .snow-menu {
@@ -284,7 +307,16 @@ body {
 .home__link {
   border-radius: 24px;
   padding: 1.5rem 3rem 1rem;
+  width: max-content;
   background-color: var(--header-color);
+
+  transition: all .3s;
+}
+
+.home__link:hover {
+  transform: translateX(20px);
+
+  transition: all .3s;
 }
 
 .home__form {
@@ -298,10 +330,25 @@ body {
   text-align: center;  
 
   font-size: 1.2em;
+  border: 2px solid var(--body-color);
   color: var(--desc-color);
 
   background-color: var(--header-color);
   border-radius: 24px;
+
+  transition: all .3s;
+}
+
+.home__input:hover {
+  border: 2px solid var(--btn-bg);
+
+  transition: all .3s;
+}
+
+.home__input[type=text]:focus {
+  border: 2px solid var(--btn-bg);
+
+  transition: all .3s;
 }
 
 .home__input::placeholder {
@@ -325,9 +372,11 @@ body {
 }
 
 .color-red, .color-green {
+  text-align: center;
+  color: #FF005C;
+
   font-size: 1em;
   font-weight: 700;
-  color: #FF005C;
 }
 
 .color-green {
@@ -338,6 +387,8 @@ body {
   font-size: 1em;
   font-weight: 600;
   color: var(--desc-color);
+
+  transition: all .3s;
 }
 
 .home__box { 
@@ -345,25 +396,34 @@ body {
   align-items: center;
 
   margin-top: 1rem;
+  margin-bottom: 1rem;
   gap: 1rem;
+
+  transition: all .3s;
 }
 
-input[type='radio'],
+input[type='checkbox'],
 label {
   cursor: pointer;
+
+  transition: all .3s;
 }
 
-input[type='radio'] {
+input[type='checkbox'] {
   position: relative;
+  
   height: 22px;
   width: 22px;
+
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   outline: none;
+
+  transition: all .3s;
 }
 
-input[type='radio']::before {
+input[type='checkbox']::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -374,9 +434,11 @@ input[type='radio']::before {
   transform: translate(-50%, -50%);
   background-color: white;
   border: 2px solid #ffffff;
+
+  transition: all .3s;
 }
 
-input[type='radio']:checked::after {
+input[type='checkbox']:checked::after {
   content: '';
   position: absolute;
   top: 50%;
@@ -387,6 +449,28 @@ input[type='radio']:checked::after {
   background-color: var(--btn-bg);
   transform: translate(-50%, -50%);
   visibility: visible;
+
+  transition: all .3s;
+}
+
+input[type='checkbox']::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--body-color);
+  transform: translate(-50%, -50%);
+
+  transition: all .3s;
+}
+
+.input-deactive {
+  filter: grayscale(1) opacity(0.4);
+
+  transition: all .3s;
 }
 
 /* products */
@@ -396,11 +480,25 @@ input[type='radio']:checked::after {
 }
 
 .products__card {
+  cursor: pointer;
+
+  position: relative;
   text-align: center;
 
   padding: 2rem;
   border-radius: 24px;
   background-color: var(--header-color);
+
+  transition: all .3s;
+}
+
+.products__buy-img {
+  display: none;
+  position: absolute;
+
+  top: 150px;
+  right: 40%;
+  left: 40%;
 }
 
 .products__title {
@@ -413,13 +511,23 @@ input[type='radio']:checked::after {
   text-transform: uppercase;
 }
 
-.products__status {
+.products__statuses {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.products__status, .products__status-popular {
   font-size: 1em;
 
   padding: 1rem;
-  border-radius: 24px;
-  width: 80px;
+  border-radius: 10px;
+  width: max-content;
   background-color: var(--btn-bg);
+}
+
+.products__status-popular {
+  background-color: var(--fail-color);
 }
 
 /* footer */
@@ -435,6 +543,16 @@ input[type='radio']:checked::after {
   margin-bottom: 5rem;
 }
 
+.footer__img {
+  cursor: pointer;
+}
+
+.footer__img:hover {
+  filter: hue-rotate(539deg) contrast(3);
+
+  transition: all .3s;
+}
+
 .footer__logo {
   font-size: 1em;
   font-weight: var(--font-medium);
@@ -443,6 +561,87 @@ input[type='radio']:checked::after {
 
 .footer__list, .footer__social {
   gap: 2rem;
+}
+
+/* success */
+.success__container  {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.success__data {
+  gap: 5rem;
+  text-align: center;
+}
+
+.success__title {
+  color: var(--btn-bg);
+}
+
+.success__btn {
+  position: absolute;  
+  right: 0;
+  left: 0;
+  bottom: 40px;
+
+  text-align: center;
+
+  color: var(--back-color);
+}
+
+/* fail */
+.fail__container  {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.fail__data {
+  gap: 5rem;
+  text-align: center;
+}
+
+.fail__title {
+  color: var(--fail-color);
+}
+
+.fail__btn {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 40px;
+  
+  text-align: center;
+
+  color: var(--back-color);
+}
+
+/* wait */
+.wait__container  {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.wait__data {
+  gap: 5rem;
+  text-align: center;
+}
+
+.wait__title {
+  color: var(--wait-color);
+}
+
+.wait__btn {
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 40px;
+  
+  text-align: center;
+
+  color: var(--back-color);
 }
 
 /* media */

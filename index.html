@@ -4,26 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=2, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/css/styles.css">
-  <title>Outreach - онлайн магазин</title>
+  <link rel="shortcut icon" href="./assets/img/logomini.svg">
+  <title>OnyxRP</title>
 </head>
 <body>
 
   <!-- header -->
   <header class="header container">
     <nav class="nav container">      
-      <a href="#" class="nav__logo">
+      <a href="https://onyx-gmod.ru" class="nav__logo">
         <img src="./assets/img/logo.svg" />
       </a>
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">          
           <li class="nav__item">
-            <a class="nav__link active" href="#">Играть</a>
+            <a class="nav__link" href="steam://connect/194.147.90.76:27015">Играть</a>
           </li>
           <li class="nav__item">
             <a class="nav__link" href="#">Правила</a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">Помощь</a>
+            <a class="nav__link" href="https://vk.me/onyxgmod">Поддержка</a>
           </li>
         </ul>
         
@@ -35,12 +36,12 @@
       <div class="nav__payment">
         <ul class="nav__list">
           <li class="nav__item">
-            <a class="nav__link" href="#">
+            <a class="nav__link" href="https://discord.gg/hudxffsWXU">
               <img src="./assets/img/discord.svg">
             </a>
           </li>
           <li class="nav__item">
-            <a class="nav__link" href="#">
+            <a class="nav__link" href="https://vk.com/onyxgmod">
               <img src="./assets/img/vk.svg">
             </a>
           </li>
@@ -72,11 +73,9 @@
             бонус X2 к пополнению!
           </p>
 
-          <div>
-            <a class="home__link" href="#">
-              <img src="./assets/img/arrow.svg" />
-            </a>
-          </div>
+          <a class="home__link" href="#">
+            <img src="./assets/img/arrow.svg" />
+          </a>
 
         </div>
 
@@ -84,21 +83,22 @@
       </div>
       <div class="home__data">
         <form action="" class="home__form" id="home-form">
-          <input class="home__input" id="home-input-steamid" placeholder="Введите свой SteamId" />
-          <input class="home__input" id="home-input-sum" placeholder="Введите сумму" />
+          <input class="home__input" id="home-input-steamid" type="text" pattern="^STEAM_[0-5]:[01]:\d+$" placeholder="Введите SteamID" />
+          <input class="home__input" id="home-input-sum" type="text" placeholder="Введите сумму" />
 
           <div class="home__box">
-            <input class="home__radio" type="radio" id="contactChoice3" name="contact" value="mail">
+            <input class="home__radio" type="checkbox" id="checkbox" name="checkbox" placeholder="checkbox">
             <label class="home__label" for="contactChoice3">
-              Я согласен с условиями <a href="#" style="color:var(--btn-bg)">пользовательского соглашения</a>
+              Я согласен с условиями <a href="https://docs.google.com/document/d/1iCIerpuqkPvM5rJJh8x8jQF4Mc-W6aIPmW4PjQS_Gp4/edit?usp=sharing" style="color:var(--btn-bg)">пользовательского соглашения</a>
             </label>
-          </div>
-
-          <p class="home__message" id="home-message"></p>
+          </div>          
 
           <button type="submit" class="home__btn">
             Далее
           </button>
+
+          <p class="home__message" id="home-message"></p>
+
         </form>
       </div>
     </div>
@@ -107,60 +107,69 @@
   <!-- products -->
   <section class="products">
     <div class="products__container container grid">
-      <article class="products__card">
+      <article class="products__card" id="productsСard" onmouseover="showImage(1)" onmouseout="hideImage(1)">
+        <img class="products__buy-img" id="buy1" src="./assets/img/buy.svg" />
         <h1 class="products__status">
           Бонус
         </h1>
 
-        <img class="products__img" src="./assets/img/money.svg" />
+        <img class="products__img" id="productImg1" src="./assets/img/money.svg" />
 
         <h1 class="products__title">
-          150 RUB
+          300 Coin
         </h1>
         <p class="products__desc">
-          бонус +150 RUB
+          ЗА 150₽
         </p>
       </article>
-      <article class="products__card">
+      <article class="products__card" id="productsСard" onmouseover="showImage(2)" onmouseout="hideImage(2)">
+        <img class="products__buy-img" id="buy2" src="./assets/img/buy.svg" />
         <h1 class="products__status">
           Бонус
         </h1>
 
-        <img class="products__img" src="./assets/img/money.svg" />
+        <img class="products__img" id="productImg2" src="./assets/img/money.svg" />
 
         <h1 class="products__title">
-          150 RUB
+          500 Coin
         </h1>
         <p class="products__desc">
-          бонус +150 RUB
+          ЗА 250₽
         </p>
       </article>
-      <article class="products__card">
-        <h1 class="products__status">
-          Бонус
-        </h1>
+      <article class="products__card" id="productsСard" onmouseover="showImage(3)" onmouseout="hideImage(3)">
+        <img class="products__buy-img" id="buy3" src="./assets/img/buy.svg" />
+        <div class="products__statuses">
+          <h1 class="products__status">
+            Бонус
+          </h1>
+          <h1 class="products__status-popular">
+            Популярно
+          </h1>
+        </div>
 
-        <img class="products__img" src="./assets/img/money.svg" />
+        <img class="products__img" id="productImg3" src="./assets/img/money.svg" />
 
         <h1 class="products__title">
-          150 RUB
+          1000 Coin
         </h1>
         <p class="products__desc">
-          бонус +150 RUB
+          ЗА 500₽
         </p>
       </article>
-      <article class="products__card">
+      <article class="products__card" id="productsСard" onmouseover="showImage(4)" onmouseout="hideImage(4)">
+        <img class="products__buy-img" id="buy4" src="./assets/img/buy.svg" />
         <h1 class="products__status">
           Бонус
         </h1>
 
-        <img class="products__img" src="./assets/img/money.svg" />
+        <img class="products__img" id="productImg4" src="./assets/img/money.svg" />
 
         <h1 class="products__title">
-          150 RUB
+          2000 Coin
         </h1>
         <p class="products__desc">
-          бонус +150 RUB
+          ЗА 1000₽
         </p>
       </article>
     </div>
@@ -169,9 +178,8 @@
   <!-- footer -->
   <footer class="footer">
     <div class="footer__container container grid">
-
       <h1 class="footer__logo">
-        © 2023 OUTREACH
+        © 2023 OnyxRP Все права защищены.
       </h1>
       <nav class="footer__nav container">
         <ul class="footer__list">
@@ -179,17 +187,21 @@
             <a class="footer__link" href="#">Пользовательское соглашение</a>
           </li>
           <li class="footer__item">
-            <a class="footer__link" href="#">Поддержка</a>
+            <a class="footer__link" href="https://vk.me/onyxgmod">Поддержка</a>
           </li>
           <li class="footer__item">
-            <a class="footer__link" href="#">help@outreach-rp.ru</a>
+            <a class="footer__link" href="https://vk.com/onyxgmod">Контакты</a>
           </li>
         </ul>
       </nav>
       
       <div class="footer__social">
+        <a href="https://discord.com/invite/hudxffsWXU">
         <img class="footer__img" src="./assets/img/discord.svg" />
+        </a>
+        <a href="https://vk.com/onyxgmod">
         <img class="footer__img" src="./assets/img/vk.svg" />
+        </a>
       </div>
 
     </div>
